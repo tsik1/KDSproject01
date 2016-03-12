@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
       return;
     }
     char* filename=argv[1];
-    int coordinate_index=(int)*argv[2];
+    int coordinate_index=atoi(argv[2]);
     int utime;
     long int ltime;
     int i;
