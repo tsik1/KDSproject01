@@ -5,10 +5,12 @@
 
 struct timespec start,end;
 
-void read_file(char* filename){
+void read_file(char* filename)
+{
   FILE *fp;
   fp = fopen(filename, "r");
-  if (fp == NULL){
+  if (fp == NULL)
+  {
     puts("Error reading file");
     return;
   }
@@ -20,7 +22,7 @@ void read_file(char* filename){
   while (!feof(fp)){
     fscanf(fp,"%f ",&x);
     count1++;
-    printf("%f\n",x );
+    //printf("%f\n",x );
     if (x>=12 && x<=30)
       count2++;
   }
@@ -33,11 +35,13 @@ void read_file(char* filename){
   printf("Percentage of coordinates inside interval: %f\n", percentage);
 }
 
-print_time() {
+print_time() 
+{
   const int DAS_NANO_SECONDS_IN_SEC = 1000000000;
   long timeElapsed_s = end.tv_sec -start.tv_sec;
   long timeElapsed_n = end.tv_nsec -start.tv_nsec;
-  if ( timeElapsed_n < 0 ) {
+  if ( timeElapsed_n < 0 ) 
+  {
     timeElapsed_n = DAS_NANO_SECONDS_IN_SEC + timeElapsed_n;
     timeElapsed_s--;
   }
